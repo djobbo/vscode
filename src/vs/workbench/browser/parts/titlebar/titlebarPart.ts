@@ -78,7 +78,7 @@ export class TitlebarPart extends Part implements ITitleService {
 	private hoverDelegate: IHoverDelegate;
 
 	private readonly titleDisposables = this._register(new DisposableStore());
-	private titleBarStyle: 'native' | 'custom';
+	private titleBarStyle: 'native' | 'custom' | 'none';
 
 	private isInactive: boolean = false;
 

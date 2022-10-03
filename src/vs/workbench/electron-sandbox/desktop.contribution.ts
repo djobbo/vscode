@@ -199,7 +199,7 @@ import product from 'vs/platform/product/common/product';
 			},
 			'window.titleBarStyle': {
 				'type': 'string',
-				'enum': ['native', 'custom'],
+				'enum': ['native', 'custom', 'none'],
 				'default': isLinux ? 'native' : 'custom',
 				'scope': ConfigurationScope.APPLICATION,
 				'description': localize('titleBarStyle', "Adjust the appearance of the window title bar. On Linux and Windows, this setting also affects the application and context menu appearances. Changes require a full restart to apply.")

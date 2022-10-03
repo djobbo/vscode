@@ -1047,7 +1047,7 @@ export abstract class Layout extends Disposable implements IWorkbenchLayoutServi
 	private shouldShowTitleBar(): boolean {
 
 		// Using the native title bar, don't ever show the custom one
-		if (getTitleBarStyle(this.configurationService) === 'native') {
+		if (['native', 'none'].includes(getTitleBarStyle(this.configurationService))) {
 			return false;
 		}
 

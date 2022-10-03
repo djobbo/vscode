@@ -32,7 +32,7 @@ interface IConfiguration extends IWindowsConfiguration {
 
 export class SettingsChangeRelauncher extends Disposable implements IWorkbenchContribution {
 
-	private titleBarStyle: 'native' | 'custom' | undefined;
+	private titleBarStyle: 'native' | 'custom' | 'none' | undefined;
 	private windowControlsOverlayEnabled: boolean | undefined;
 	private windowSandboxEnabled: boolean | undefined;
 	private nativeTabs: boolean | undefined;

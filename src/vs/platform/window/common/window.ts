@@ -124,7 +124,7 @@ export interface IWindowSettings {
 	readonly restoreWindows: 'preserve' | 'all' | 'folders' | 'one' | 'none';
 	readonly restoreFullscreen: boolean;
 	readonly zoomLevel: number;
-	readonly titleBarStyle: 'native' | 'custom';
+	readonly titleBarStyle: 'native' | 'custom' | 'none';
 	readonly autoDetectHighContrast: boolean;
 	readonly autoDetectColorScheme: boolean;
 	readonly menuBarVisibility: MenuBarVisibility;
@@ -137,7 +137,7 @@ export interface IWindowSettings {
 	readonly experimental?: { useSandbox: boolean };
 }
 
-export function getTitleBarStyle(configurationService: IConfigurationService): 'native' | 'custom' {
+export function getTitleBarStyle(configurationService: IConfigurationService): 'native' | 'custom' | 'none' {
 	if (isWeb) {
 		return 'custom';
 	}
@@ -155,7 +155,7 @@ export function getTitleBarStyle(configurationService: IConfigurationService): '
 		}
 
 		const style = configuration.titleBarStyle;
-		if (style === 'native' || style === 'custom') {
+		if (!!style) {
 			return style;
 		}
 	}
